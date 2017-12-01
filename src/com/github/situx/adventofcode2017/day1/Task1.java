@@ -40,7 +40,7 @@ public class Task1 {
 		Task1 task1=new Task1();
 		String numString=new String(Files.readAllBytes(Paths.get("task1.txt")));
 		System.out.println("Result: "+task1.scanString(numString,1));
-		System.out.println("Result: "+task1.scanString(numString,(numString.length()/2)%numString.length()));
+		System.out.println("Result: "+task1.scanString(numString,numString.length()/2));
 	}
 	
 }
