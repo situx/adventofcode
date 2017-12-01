@@ -19,13 +19,13 @@ public class Task1 {
 	public Integer scanString(String numString){
 		Character curchar,nextchar;
 		Integer sum=0;
-			for(int i=0;i<numString.length()-1;i++){
-				curchar=numString.charAt(i);
-				nextchar=numString.charAt(i+1);
-				if(curchar==nextchar){
-					System.out.println("Match "+curchar+" - "+nextchar+" CurrentSum: "+sum);
-					sum+=Integer.valueOf(curchar.toString());
-				}
+		for(int i=0;i<numString.length()-1;i++){
+			curchar=numString.charAt(i);
+			nextchar=numString.charAt(i+1);
+			if(curchar==nextchar){
+				System.out.println("Match "+curchar+" - "+nextchar+" CurrentSum: "+sum);
+				sum+=Integer.valueOf(curchar.toString());
+			}
 		}
 		if(numString.charAt(0)==numString.charAt(numString.length()-1)){
 			sum+=Integer.valueOf(numString.charAt(0)+"");
