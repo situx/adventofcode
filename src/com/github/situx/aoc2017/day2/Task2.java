@@ -1,4 +1,4 @@
-package com.github.situx.adventofcode2017.day2;
+package com.github.situx.day2;
 
 import java.io.*;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.github.situx.adventofcode2017.day1;
+package com.github.situx.day1;
 
 import java.io.IOException;
 import java.nio.file.Files;
