@@ -1,4 +1,4 @@
-package com.github.situx.day1;
+package com.github.situx.aoc2017.day1;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -38,7 +38,7 @@ public class Task1 {
 	 */
 	public static void main(String[] args) throws IOException{
 		Task1 task1=new Task1();
-		String numString=new String(Files.readAllBytes(Paths.get("task1.txt")));
+		String numString=new String(Files.readAllBytes(Paths.get("aoc2017files/task1_2017.txt")));
 		System.out.println("Result: "+task1.scanString(numString,1));
 		System.out.println("Result: "+task1.scanString(numString,numString.length()/2));
 	}

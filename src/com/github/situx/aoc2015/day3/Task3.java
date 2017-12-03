@@ -1,7 +1,9 @@
 package com.github.situx.aoc2015.day3;
 
 /**
- * Created by timo on 03.12.17 .
+ * Solution to Advent Of Code 2015 Day 3.
  */
 public class Task3 {
+
+
 }

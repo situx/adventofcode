@@ -1,4 +1,4 @@
-package com.github.situx.day2;
+package com.github.situx.aoc2017.day2;
 
 import java.io.*;
 import java.util.Arrays;
@@ -74,8 +74,8 @@ public class Task2 {
      */
     public static void main(String[] args) throws IOException {
         Task2 task2=new Task2();
-        System.out.println(task2.getMinMaxDiffCheckSumFromFile("task2.txt"));
-        System.out.println(task2.getDividerCheckSumFromFile("task2.txt"));
+        System.out.println(task2.getMinMaxDiffCheckSumFromFile("aoc2017files/task2_2017.txt"));
+        System.out.println(task2.getDividerCheckSumFromFile("aoc2017files/task2_2017.txt"));
     }
 
 }
