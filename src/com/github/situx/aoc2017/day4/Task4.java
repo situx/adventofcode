@@ -1,4 +1,4 @@
-package com.github.situx.adventofcode2017.day4;
+package com.github.situx.aoc2017.day4;
 
 
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Solution to Task 1 of advent calendar.
+ * Solution to Task 4 of Advent Of Code 2017.
  * @author situx
  *
  */
@@ -25,51 +25,19 @@ public class Task4 {
 		String[] lines=numString.split(System.lineSeparator());
 		for(String line:lines){
 			String[] words=line.split("\\s");
-			Set<String> wordset=new TreeSet<String>(Arrays.asList(words));
+			Set<String> wordset=new TreeSet<String>();
 			if(anagram){
-				//System.out.println(wordset);
-				Set<String> anagramset=new TreeSet<String>();
 				for(String word:words){
-					Set<String> perms=getStringPermutation(word);
-					perms.remove(word);
-					anagramset.addAll(perms);
+					char[] chars = word.toCharArray();
+					Arrays.sort(chars);
+					wordset.add(new String(chars));
 				}
-				wordset.retainAll(anagramset);
-				if(wordset.size()>0){
-					System.out.println(wordset);
-				}
-				sum+=wordset.size()>0?0:1;
 			}else{
-				sum+=wordset.size()==words.length?1:0;
+				wordset.addAll(Arrays.asList(words));
 			}
+			sum+=wordset.size()==words.length?1:0;
 		}
 		return sum;
-	}
-	
-	public Set<String> getStringPermutation(String input) {
-		Set<String> result = new TreeSet<String>();
-		if (input == null) {
-			return null;
-		} else if (input.isEmpty()) {
-			result.add("");
-			return result;
-		}
- 
-		char firstChar = input.charAt(0);
-		String remainders = input.substring(1);
-		Set<String> words = getStringPermutation(remainders);
-		for (String newString : words) {
-			for (int i = 0; i <= newString.length(); i++) {
-				result.add(addChar(newString, firstChar, i));
-			}
-		}
-		return result;
-	}
- 
-	private String addChar(String str, char c, int j) {
-		String first = str.substring(0, j);
-		String last = str.substring(j);
-		return first + c + last;
 	}
 	
 	/**
@@ -80,8 +48,8 @@ public class Task4 {
 	public static void main(String[] args) throws IOException{
 		Task4 task4=new Task4();
 		String numString=new String(Files.readAllBytes(Paths.get("aoc2017files/task4_2017.txt")));
-		System.out.println("Result: "+task4.scanString(numString,false));
-		System.out.println("Result: "+task4.scanString(numString,true));
+		System.out.println("Valid Passphrases without duplicate words: "+task4.scanString(numString,false));
+		System.out.println("Valid Passphrases without anagrams: "+task4.scanString(numString,true));
 	}
 	
 }
