@@ -8,8 +8,6 @@ import java.util.TreeSet;
 import java.util.Map;
 import java.util.Set;
 
-import com.github.situx.aoc2016.day4.Task4;
-
 /**
  * Solution to Advent Of Code 2017 Day 12.
  * @author situx
